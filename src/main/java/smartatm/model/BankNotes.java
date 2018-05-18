@@ -1,5 +1,6 @@
 package smartatm.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ public class BankNotes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Integer id;
     private int note;
     private int amount;
@@ -27,6 +29,13 @@ public class BankNotes {
                 .id(id)
                 .note(note)
                 .amount(this.amount + amount).build();
+    }
+
+    public BankNotes drecreaseNotes(Integer amount){
+        return BankNotes.builder()
+                .id(id)
+                .note(note)
+                .amount(this.amount - amount).build();
     }
 
     @Override

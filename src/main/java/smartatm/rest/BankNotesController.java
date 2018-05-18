@@ -32,8 +32,8 @@ public class BankNotesController {
         return bankNotesRepository.save(suppliedNotes);
     }
 
-    @PostMapping("/withdraw/{value}")
-    public List<Integer[]> withdraw(@PathVariable Integer value){
+    @PostMapping("/options/{value}")
+    public List<List<BankNotes>> options(@PathVariable Integer value){
 
         List<BankNotes> notesList = bankNotesRepository.findAll();
         int[] availableNotes = notesList.stream().mapToInt(n -> n.getNote()).toArray();
@@ -41,6 +41,21 @@ public class BankNotesController {
         return bankNotesService.calcCombinations(availableNotes, availableNotesAmount, value);
 
     }
+
+    @PostMapping("/withdraw/")
+    public List<BankNotes> withdraw(@RequestBody List<BankNotes> bankNotes){
+
+        List<BankNotes> notes = bankNotesRepository.findAll();
+
+        bankNotes.stream().map(bn ->
+                notes.stream().filter(f -> f.equals(bn))
+                        .findFirst().orElse(BankNotes.builder().note(bn.getNote()).build()).drecreaseNotes(bn.getAmount())
+        ).collect(toList()).forEach(bankNotesRepository::save);
+
+        return bankNotesRepository.findAll();
+    }
+
+
 
     @GetMapping
     public List<BankNotes> getAll(){

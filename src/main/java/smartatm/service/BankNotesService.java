@@ -1,39 +1,50 @@
 package smartatm.service;
 
 import org.springframework.stereotype.Service;
+import smartatm.model.BankNotes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 public class BankNotesService{
 
-    public List<Integer[]> calcCombinations(int[] bankNotes, int[] ammounts, int value ) {
-        return solutions(bankNotes, ammounts, new int[ammounts.length], value, 0);
+    public List<List<BankNotes>> calcCombinations(final int[] bankNotes, final int[] ammounts, final int value) {
+        List<List<BankNotes>> result = solutions(bankNotes, ammounts, new int[ammounts.length], value, 0);
+        return result.stream()
+                    .map( l -> l.stream()
+                                .filter(f -> f.getAmount() != 0 )
+                                .collect(toList()))
+                    .collect(toList());
     }
 
-    private List<Integer[]> solutions(int[] values, int[] ammounts, int[] variation, int price, int position){
-        List<Integer[]> list = new ArrayList<>();
+    private List<List<BankNotes>> solutions(final int[] values, final int[] ammounts, final int[] variation, final int price, final int position){
+        List<List<BankNotes>> list = new ArrayList<>();
         int value = calcVariationAmount(values, variation);
         if (value < price){
             for (int i = position; i < values.length; i++) {
                 if (ammounts[i] > variation[i]){
-                    int[] newvariation = variation.clone();
-                    newvariation[i]++;
-                    List<Integer[]> newList = solutions(values, ammounts, newvariation, price, i);
+                    int[] newVariation = variation.clone();
+                    newVariation[i]++;
+                    List<List<BankNotes>> newList = solutions(values, ammounts, newVariation, price, i);
                     if (newList != null){
                         list.addAll(newList);
                     }
                 }
             }
         } else if (value == price) {
-            list.add(Arrays.stream(variation).boxed().toArray( Integer[]::new ));
+            List<BankNotes> notes = new ArrayList<>();
+            for (int i = 0; i < variation.length; i++) {
+                notes.add(BankNotes.builder().amount(variation[i]).note(values[i]).build());
+            }
+            list.add(notes);
         }
         return list;
     }
 
-    private int calcVariationAmount(int[] values, int[] variation){
+    private int calcVariationAmount(final int[] values, final int[] variation){
         int ret = 0;
         for (int i = 0; i < variation.length; i++) {
             ret += values[i] * variation[i];
