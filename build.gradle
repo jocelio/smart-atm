@@ -18,9 +18,18 @@ apply plugin: 'org.springframework.boot'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
+
+sourceSets {
+    main.java.srcDir "src/main/java"
+    main.resources.srcDir "src/main/resources"
+    test.java.srcDir "src/test/java"
+    test.resources.srcDir "src/test/resources"
+}
+
 repositories {
     mavenCentral()
 }
+
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')

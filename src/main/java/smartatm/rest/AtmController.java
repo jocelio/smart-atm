@@ -14,7 +14,7 @@ import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
 @RestController
-@RequestMapping("/banknotes")
+@RequestMapping("/api/atm")
 @AllArgsConstructor
 public class BankNotesController {
 

@@ -50,4 +50,6 @@ public class BankNotes {
     public int hashCode() {
         return Objects.hash(note);
     }
+
+
 }
