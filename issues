@@ -1,0 +1,5 @@
+- armazenar quantidade de cada notas e prover endpoint para consulta
+- endpoint que recebe uma data quantidade de cada cedula e armazena atualizando caso já exista uma quantidade armazenada.
+- endpoint que recebe um valor a ser sacado e responde com as combinacoes possiveis de cédulas.
+- endpoint que recebe uma combinacao de cedulas e um valor, e realiza o saque, atualizando a quantidade de cedulas no estoque de notas
+- endpoint que recebe um valor e realiza o saque utilizando uma combinacão de cedulas que melhor melhor equilibra a quantidade de cedulas
