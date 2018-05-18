@@ -18,8 +18,8 @@ import java.util.Objects;
 public class BankNotes {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private int note;
     private int amount;

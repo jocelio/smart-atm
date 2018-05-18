@@ -9,26 +9,35 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 @Service
-public class BankNotesService{
+public class BankNotesService {
+
+    public static final int MAX_NOTES = 3;
+
+    public List<BankNotes> calculateNotesUpdate(List<BankNotes> withdrawOption, List<BankNotes> availableNotes){
+        return withdrawOption.stream().map(bn ->
+                availableNotes.stream().filter(f -> f.equals(bn))
+                        .findFirst().orElse(BankNotes.builder().note(bn.getNote()).build()).drecreaseNotes(bn.getAmount())
+        ).collect(toList());
+    }
 
     public List<List<BankNotes>> calcCombinations(final int[] bankNotes, final int[] ammounts, final int value) {
-        List<List<BankNotes>> result = solutions(bankNotes, ammounts, new int[ammounts.length], value, 0);
+        List<List<BankNotes>> result = resolution(bankNotes, ammounts, new int[ammounts.length], value, 0);
         return result.stream()
-                    .map( l -> l.stream()
-                                .filter(f -> f.getAmount() != 0 )
-                                .collect(toList()))
+//                    .map( l -> l.stream()
+//                                .collect(toList()))
+                    .filter(l -> l.stream().filter(f -> f.getAmount() != 0).count() <= MAX_NOTES )
                     .collect(toList());
     }
 
-    private List<List<BankNotes>> solutions(final int[] values, final int[] ammounts, final int[] variation, final int price, final int position){
+    private List<List<BankNotes>> resolution(final int[] values, final int[] amounts, final int[] variation, final int price, final int position){
         List<List<BankNotes>> list = new ArrayList<>();
         int value = calcVariationAmount(values, variation);
         if (value < price){
             for (int i = position; i < values.length; i++) {
-                if (ammounts[i] > variation[i]){
+                if (amounts[i] > variation[i]){
                     int[] newVariation = variation.clone();
                     newVariation[i]++;
-                    List<List<BankNotes>> newList = solutions(values, ammounts, newVariation, price, i);
+                    List<List<BankNotes>> newList = resolution(values, amounts, newVariation, price, i);
                     if (newList != null){
                         list.addAll(newList);
                     }
