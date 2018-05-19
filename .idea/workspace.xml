@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b043f72-d453-44c2-a662-a40340d6f3aa" name="Default" comment="">
+    <list default="true" id="5b043f72-d453-44c2-a662-a40340d6f3aa" name="Default" comment="Injecting service and repository throught autowired">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/model/BankNotes$BankNotesBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/model/BankNotes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/model/Greeting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/rest/BankNotesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/rest/GreetingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/service/BankNotesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/service/BankNotesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-atm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-atm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/smartatm/model/Greeting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/GreetingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/gov/smartatm/GreetingControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/gov/smartatm/AtmControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/gov/smartatm/TEs.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -29,55 +50,51 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="BankNotes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/model/BankNotes.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/model/BankNotes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="173">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GreetingControllerTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java">
+      <file leaf-file-name="AtmControllerTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/br/gov/smartatm/AtmControllerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="297">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
               <folding>
                 <element signature="e#0#2103#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TEs.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/TEs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AtmController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+            <state relative-caret-position="147">
+              <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+              <folding>
+                <element signature="e#2828#2829#0" expanded="true" />
+                <element signature="e#2876#2877#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GreetingController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/GreetingController.java">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            <state relative-caret-position="15">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/Application.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/Application.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
@@ -331,9 +348,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4579829275000" />
+        <entry key="$PROJECT_DIR$" value="4579847345000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="2238895975" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3554385618" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1389967582" />
       </map>
     </option>
@@ -534,12 +551,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/smartatm/model/BankNotes.java" />
         <option value="$PROJECT_DIR$/src/main/java/smartatm/rest/BankNotesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java" />
         <option value="$PROJECT_DIR$/src/test/java/smartatm/TEs.java" />
         <option value="$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java" />
+        <option value="$PROJECT_DIR$/smart-atm.iml" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/test/java/br/gov/smartatm/GreetingControllerTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/br/gov/smartatm/AtmControllerTests.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -600,20 +622,16 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="smartatm" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-atm" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-atm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-atm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-atm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="smartatm" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-atm" type="b2602c69:ProjectViewProjectNode" />
@@ -630,6 +648,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -643,7 +662,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GreetingControllerTests">
+  <component name="RunManager" selected="JUnit.AtmControllerTests.shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -681,6 +700,121 @@
         <option name="vmOptions" value="" />
       </ExternalSystemSettings>
     </configuration>
+    <configuration name="AtmControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="smart-atm_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.gov.smartatm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="br.gov.smartatm" />
+      <option name="MAIN_CLASS_NAME" value="br.gov.smartatm.AtmControllerTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="AtmControllerTests.givenWac_whenServletContext_thenItProvidesGreetController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="smart-atm_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.gov.smartatm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="br.gov.smartatm" />
+      <option name="MAIN_CLASS_NAME" value="br.gov.smartatm.AtmControllerTests" />
+      <option name="METHOD_NAME" value="givenWac_whenServletContext_thenItProvidesGreetController" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="AtmControllerTests.shouldCreateAndReturnListBankNotes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="smart-atm_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.gov.smartatm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="br.gov.smartatm" />
+      <option name="MAIN_CLASS_NAME" value="br.gov.smartatm.AtmControllerTests" />
+      <option name="METHOD_NAME" value="shouldCreateAndReturnListBankNotes" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="AtmControllerTests.shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="smart-atm_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.gov.smartatm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="br.gov.smartatm" />
+      <option name="MAIN_CLASS_NAME" value="br.gov.smartatm.AtmControllerTests" />
+      <option name="METHOD_NAME" value="shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="AtmControllerTests.shouldReturnListBankNotes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="smart-atm_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.gov.smartatm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="br.gov.smartatm" />
+      <option name="MAIN_CLASS_NAME" value="br.gov.smartatm.AtmControllerTests" />
+      <option name="METHOD_NAME" value="shouldReturnListBankNotes" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration name="GreetingControllerTests" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="smart-atm_test" />
       <extension name="coverage">
@@ -704,36 +838,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="GreetingControllerTests.noParamGreetingShouldReturnDefaultMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GreetingControllerTests.noParamGreetingShouldReturnDefaultMessage" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="smart-atm_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GreetingControllerTests" />
       <option name="METHOD_NAME" value="noParamGreetingShouldReturnDefaultMessage" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="GreetingControllerTests.paramGreetingShouldReturnTailoredMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="smart-atm_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="smartatm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="smartatm" />
-      <option name="MAIN_CLASS_NAME" value="smartatm.GreetingControllerTests" />
-      <option name="METHOD_NAME" value="paramGreetingShouldReturnTailoredMessage" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -783,15 +894,22 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Gradle.App" />
       <item itemvalue="JUnit.GreetingControllerTests" />
       <item itemvalue="JUnit.GreetingControllerTests.noParamGreetingShouldReturnDefaultMessage" />
-      <item itemvalue="JUnit.GreetingControllerTests.paramGreetingShouldReturnTailoredMessage" />
+      <item itemvalue="Gradle.App" />
+      <item itemvalue="JUnit.AtmControllerTests" />
+      <item itemvalue="JUnit.AtmControllerTests.shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue" />
+      <item itemvalue="JUnit.AtmControllerTests.shouldReturnListBankNotes" />
+      <item itemvalue="JUnit.AtmControllerTests.shouldCreateAndReturnListBankNotes" />
+      <item itemvalue="JUnit.AtmControllerTests.givenWac_whenServletContext_thenItProvidesGreetController" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GreetingControllerTests.paramGreetingShouldReturnTailoredMessage" />
-        <item itemvalue="JUnit.GreetingControllerTests.noParamGreetingShouldReturnDefaultMessage" />
+        <item itemvalue="JUnit.AtmControllerTests.shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue" />
+        <item itemvalue="JUnit.AtmControllerTests.shouldReturnListBankNotes" />
+        <item itemvalue="JUnit.AtmControllerTests.shouldCreateAndReturnListBankNotes" />
+        <item itemvalue="JUnit.AtmControllerTests.givenWac_whenServletContext_thenItProvidesGreetController" />
+        <item itemvalue="JUnit.AtmControllerTests" />
       </list>
     </recent_temporary>
   </component>
@@ -806,38 +924,46 @@
       <option name="presentableId" value="Default" />
       <updated>1526674789340</updated>
     </task>
+    <task id="LOCAL-00001" summary="Injecting service and repository throught autowired">
+      <created>1526695254336</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526695254336</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GreetingControllerTests_noParamGreetingShouldReturnDefaultMessage - 2018.05.18 at 17h 33m 02s.xml">
-      <configuration name="GreetingControllerTests.noParamGreetingShouldReturnDefaultMessage" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldCreateAndReturnListBankNotes - 2018.05.19 at 00h 52m 05s.xml">
+      <configuration name="AtmControllerTests.shouldCreateAndReturnListBankNotes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests_paramGreetingShouldReturnTailoredMessage - 2018.05.18 at 17h 46m 45s.xml">
-      <configuration name="GreetingControllerTests.paramGreetingShouldReturnTailoredMessage" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldCreateAndReturnListBankNotes - 2018.05.19 at 00h 52m 42s.xml">
+      <configuration name="AtmControllerTests.shouldCreateAndReturnListBankNotes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 48m 32s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldCreateAndReturnListBankNotes - 2018.05.19 at 00h 53m 49s.xml">
+      <configuration name="AtmControllerTests.shouldCreateAndReturnListBankNotes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 53m 49s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_givenWac_whenServletContext_thenItProvidesGreetController - 2018.05.19 at 00h 57m 53s.xml">
+      <configuration name="AtmControllerTests.givenWac_whenServletContext_thenItProvidesGreetController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 56m 11s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_givenWac_whenServletContext_thenItProvidesGreetController - 2018.05.19 at 00h 58m 52s.xml">
+      <configuration name="AtmControllerTests.givenWac_whenServletContext_thenItProvidesGreetController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 56m 30s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldCreateAndReturnListBankNotes - 2018.05.19 at 00h 59m 22s.xml">
+      <configuration name="AtmControllerTests.shouldCreateAndReturnListBankNotes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 57m 18s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldCreateAndReturnListBankNotes - 2018.05.19 at 01h 00m 09s.xml">
+      <configuration name="AtmControllerTests.shouldCreateAndReturnListBankNotes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 58m 25s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldReturnListBankNotes - 2018.05.19 at 01h 00m 35s.xml">
+      <configuration name="AtmControllerTests.shouldReturnListBankNotes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 59m 18s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue - 2018.05.19 at 01h 00m 56s.xml">
+      <configuration name="AtmControllerTests.shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 59m 41s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    <history-entry file="AtmControllerTests_shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue - 2018.05.19 at 01h 02m 11s.xml">
+      <configuration name="AtmControllerTests.shouldReturnACertainQuantityOfWithdrawOptionsToAGivenValue" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -846,13 +972,13 @@
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Messages" weight="0.32876712" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3452055" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3298611" />
       <window_info anchor="bottom" id="Terminal" />
@@ -865,7 +991,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -878,8 +1004,31 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Injecting service and repository throught autowired" />
+    <option name="LAST_COMMIT_MESSAGE" value="Injecting service and repository throught autowired" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
@@ -893,48 +1042,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/br/gov/smartatm/TEs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-atm.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="116" selection-start-line="1" selection-start-column="116" selection-end-line="1" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/model/BankNotes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/model/BankNotes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="173">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/GreetingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state relative-caret-position="135">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/GreetingController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        <state relative-caret-position="147">
+          <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <element signature="e#2828#2829#0" expanded="true" />
+            <element signature="e#2876#2877#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/TEs.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/br/gov/smartatm/AtmControllerTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="297">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
           <folding>
             <element signature="e#0#2103#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -990,12 +1161,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>smart-atm_main|smart-atm</last-edited>
+          <last-edited>smart-atm</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

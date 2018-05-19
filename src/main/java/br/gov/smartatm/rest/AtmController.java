@@ -33,10 +33,12 @@ public class AtmController {
                         .findFirst().orElse(BankNotes.builder().note(bn.getNote()).build()).supplyNotes(bn.getAmount())
         ).collect(toList());
 
-        return bankNotesRepository.save(suppliedNotes);
+        List<BankNotes> save = bankNotesRepository.save(suppliedNotes);
+        System.out.println("save"+save);
+        return save;
     }
 
-    @PostMapping("/options/{value}")
+    @GetMapping("/options/{value}")
     public List<List<BankNotes>> options(@PathVariable final Integer value){
 
         return getWithdrawOptions(value);
@@ -79,6 +81,11 @@ public class AtmController {
         }
 
         return bestUniformity;
+    }
+
+    @DeleteMapping
+    public void clearNotes(){
+         bankNotesRepository.deleteAll();
     }
 
     @GetMapping
