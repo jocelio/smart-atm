@@ -1,10 +1,10 @@
-package smartatm.rest;
+package br.gov.smartatm.rest;
 
+import br.gov.smartatm.model.BankNotes;
+import br.gov.smartatm.service.BankNotesRepository;
+import br.gov.smartatm.service.BankNotesService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import smartatm.model.BankNotes;
-import smartatm.service.BankNotesRepository;
-import smartatm.service.BankNotesService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.toList;
 @RestController
 @RequestMapping("/api/atm")
 @AllArgsConstructor
-public class BankNotesController {
+public class AtmController {
 
     BankNotesRepository bankNotesRepository;
 

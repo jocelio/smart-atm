@@ -1,4 +1,4 @@
-package smartatm.rest;
+package br.gov.smartatm.rest;
 
 import java.util.concurrent.atomic.AtomicLong;
 

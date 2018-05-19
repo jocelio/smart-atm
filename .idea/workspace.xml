@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b043f72-d453-44c2-a662-a40340d6f3aa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/smartatm/service/BankNotesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/smartatm/service/BankNotesService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smartatm/model/BankNotes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smartatm/model/BankNotes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smartatm/rest/BankNotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smartatm/rest/BankNotesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,23 +37,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GreetingControllerTests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GreetingControllerTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="101">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#2103#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BankNotesController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/BankNotesController.java">
+      <file leaf-file-name="TEs.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/TEs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AtmController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -73,11 +70,8 @@
       <file leaf-file-name="GreetingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/GreetingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -541,11 +535,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/smartatm/model/BankNotes.java" />
         <option value="$PROJECT_DIR$/src/main/java/smartatm/rest/BankNotesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/smartatm/TEs.java" />
+        <option value="$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java" />
       </list>
     </option>
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="GreetingControllerTests" />
+    </enabled-run-configurations>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -605,21 +606,13 @@
               <item name="smart-atm" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-atm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-atm" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-atm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-atm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-atm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="smartatm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -650,7 +643,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.App">
+  <component name="RunManager" selected="JUnit.GreetingControllerTests">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -816,21 +809,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 21m 16s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 24m 09s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 27m 05s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 31m 15s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 32m 29s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GreetingControllerTests_noParamGreetingShouldReturnDefaultMessage - 2018.05.18 at 17h 33m 02s.xml">
       <configuration name="GreetingControllerTests.noParamGreetingShouldReturnDefaultMessage" configurationId="JUnit" />
     </history-entry>
@@ -840,6 +818,27 @@
     <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 48m 32s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 53m 49s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 56m 11s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 56m 30s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 57m 18s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 58m 25s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 59m 18s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetingControllerTests - 2018.05.18 at 17h 59m 41s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="804" extended-state="0" />
@@ -847,13 +846,13 @@
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32876712" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32876712" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3452055" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3298611" />
       <window_info anchor="bottom" id="Terminal" />
@@ -894,16 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/GreetingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -918,20 +907,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/AtmController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="50">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/BankNotesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/smartatm/rest/GreetingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="60">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/TEs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/smartatm/GreetingControllerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#2103#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -987,7 +990,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>smart-atm_test|smart-atm</last-edited>
+          <last-edited>smart-atm_main|smart-atm</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

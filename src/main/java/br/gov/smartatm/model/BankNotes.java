@@ -1,4 +1,4 @@
-package smartatm.model;
+package br.gov.smartatm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

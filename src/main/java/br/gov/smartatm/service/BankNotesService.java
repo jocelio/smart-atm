@@ -1,7 +1,7 @@
-package smartatm.service;
+package br.gov.smartatm.service;
 
 import org.springframework.stereotype.Service;
-import smartatm.model.BankNotes;
+import br.gov.smartatm.model.BankNotes;
 
 import java.util.ArrayList;
 import java.util.List;

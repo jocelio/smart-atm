@@ -1,6 +1,6 @@
-package smartatm.service;
+package br.gov.smartatm.service;
 
-import smartatm.model.BankNotes;
+import br.gov.smartatm.model.BankNotes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
