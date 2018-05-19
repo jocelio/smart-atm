@@ -3,7 +3,7 @@ package br.gov.smartatm.rest;
 import br.gov.smartatm.model.BankNotes;
 import br.gov.smartatm.service.BankNotesRepository;
 import br.gov.smartatm.service.BankNotesService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -15,12 +15,13 @@ import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequestMapping("/api/atm")
-@AllArgsConstructor
 public class AtmController {
 
-    BankNotesRepository bankNotesRepository;
+    @Autowired
+    private BankNotesRepository bankNotesRepository;
 
-    BankNotesService bankNotesService;
+    @Autowired
+    private BankNotesService bankNotesService;
     
     @PostMapping("/supply")
     public List<BankNotes> supply(@RequestBody final List<BankNotes> bankNotes){
