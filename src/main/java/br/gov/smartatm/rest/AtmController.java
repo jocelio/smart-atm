@@ -56,7 +56,7 @@ public class AtmController {
     }
 
 
-    @PostMapping("/best-option/{value}")
+    @GetMapping("/best-option/{value}")
     public List<BankNotes> bestOption(@PathVariable final Integer value){
 
         List<BankNotes> availableNotes = bankNotesRepository.findAll();
