@@ -1,0 +1,114 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$glyphicons-000-glass-name: 'glyphicons_000_glass';
+$glyphicons-000-glass-x: 0px;
+$glyphicons-000-glass-y: 27px;
+$glyphicons-000-glass-offset-x: 0px;
+$glyphicons-000-glass-offset-y: -27px;
+$glyphicons-000-glass-width: 24px;
+$glyphicons-000-glass-height: 24px;
+$glyphicons-000-glass-total-width: 26px;
+$glyphicons-000-glass-total-height: 111px;
+$glyphicons-000-glass-image: 'todo-sprite.png';
+$glyphicons-000-glass: (0px, 27px, 0px, -27px, 24px, 24px, 26px, 111px, 'todo-sprite.png', 'glyphicons_000_glass', );
+$glyphicons-001-leaf-name: 'glyphicons_001_leaf';
+$glyphicons-001-leaf-x: 0px;
+$glyphicons-001-leaf-y: 56px;
+$glyphicons-001-leaf-offset-x: 0px;
+$glyphicons-001-leaf-offset-y: -56px;
+$glyphicons-001-leaf-width: 24px;
+$glyphicons-001-leaf-height: 25px;
+$glyphicons-001-leaf-total-width: 26px;
+$glyphicons-001-leaf-total-height: 111px;
+$glyphicons-001-leaf-image: 'todo-sprite.png';
+$glyphicons-001-leaf: (0px, 56px, 0px, -56px, 24px, 25px, 26px, 111px, 'todo-sprite.png', 'glyphicons_001_leaf', );
+$glyphicons-002-dog-name: 'glyphicons_002_dog';
+$glyphicons-002-dog-x: 0px;
+$glyphicons-002-dog-y: 86px;
+$glyphicons-002-dog-offset-x: 0px;
+$glyphicons-002-dog-offset-y: -86px;
+$glyphicons-002-dog-width: 26px;
+$glyphicons-002-dog-height: 25px;
+$glyphicons-002-dog-total-width: 26px;
+$glyphicons-002-dog-total-height: 111px;
+$glyphicons-002-dog-image: 'todo-sprite.png';
+$glyphicons-002-dog: (0px, 86px, 0px, -86px, 26px, 25px, 26px, 111px, 'todo-sprite.png', 'glyphicons_002_dog', );
+$glyphicons-003-user-name: 'glyphicons_003_user';
+$glyphicons-003-user-x: 0px;
+$glyphicons-003-user-y: 0px;
+$glyphicons-003-user-offset-x: 0px;
+$glyphicons-003-user-offset-y: 0px;
+$glyphicons-003-user-width: 23px;
+$glyphicons-003-user-height: 22px;
+$glyphicons-003-user-total-width: 26px;
+$glyphicons-003-user-total-height: 111px;
+$glyphicons-003-user-image: 'todo-sprite.png';
+$glyphicons-003-user: (0px, 0px, 0px, 0px, 23px, 22px, 26px, 111px, 'todo-sprite.png', 'glyphicons_003_user', );
+$spritesheet-width: 26px;
+$spritesheet-height: 111px;
+$spritesheet-image: 'todo-sprite.png';
+$spritesheet-sprites: ($glyphicons-000-glass, $glyphicons-001-leaf, $glyphicons-002-dog, $glyphicons-003-user, );
+$spritesheet: (26px, 111px, 'todo-sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
