@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Main Page</title>
+</head>
+<body ng-app="demo">
+<hr/>
+<div class="container" ng-controller="UserController">
+    <div class="row">
+        <label>User</label> <input type="text" ng-model="userDto.userName" class="input-sm spacing"/>
+        <label>Skills</label> <input type="text" ng-model="skills" ng-list class="input-sm custom-width spacing"
+                                     placeholder="use comma to separate skills"/>
+        <button ng-click="saveUser()" class="btn btn-sm btn-info">Save User</button>
+    </div>
+    <hr/>
+    <div class="row">
+        <p>{{allUsers | json}}</p>
+    </div>
+    <hr/>
+    <div class="row" ng-repeat="user in allUsers">
+        <div class="">
+            <h3>{{user.userName}}</h3>
+            <span ng-repeat="skill in user.skillDtos" class="spacing">{{skill.skillName}}</span>
+        </div>
+    </div>
+</div>
+Oi
+</body>
+<script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/AtmController.js"></script>
+<script src="js/app/AtmService.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+</html>
+</html>
