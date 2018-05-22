@@ -7,16 +7,25 @@
  */
 angular = require('angular');
 var _ = require('lodash');
+var swal = require('sweetalert');
+
 angular.module('todomvc')
 	.controller('AtmController', function AtmController($scope, $routeParams, $filter, AtmService) {
 		'use strict';
         $scope._ = _;
         var self = this;
-				self.addNote = addNote;
+
 				self.notes = [];
 				self.supplyNote = {};
 				self.supplyNotes = [];
+				self.withdrawOptions = [];
+
+				self.addNote = addNote;
 				self.supply = supply;
+				self.remove = remove;
+				self.openWithdrawModal = openWithdrawModal;
+				self.format = format;
+				self.withdraw = withdraw;
 
 				getAllNotes();
 
@@ -36,6 +45,13 @@ angular.module('todomvc')
 							console.log(sameNote,'ja tem, senhor');
 					}
 					self.supplyNote = {};
+
+				}
+
+				function remove(bankNote){
+						self.supplyNotes = _.filter(self.supplyNotes, function(sn){
+							 return sn.note != bankNote.note;
+						});
 				}
 
 				function supply(){
@@ -43,8 +59,73 @@ angular.module('todomvc')
 							self.notes = response.data
 							self.supplyNotes = [];
 							self.supplyNote = {};
+							$('#exampleModal').modal('hide');
+							swal("Notas adicionadas com sucesso.");
 						});
-						$('#exampleModal').modal('hide');
+				}
+
+				function openWithdrawModal(){
+
+					swal("Valor:", {
+					  content: "input",
+					})
+					.then(function(withdrawValue){
+						swal("Como deseja suas cédulas?", {
+							  buttons: {
+							    choose: {
+							      text: "Escolher",
+							      value: "choose",
+							    },
+									bestOption: {
+							      text: "Melhor Opção",
+							      value: "bestOption",
+							    },
+									cancel: "Cancelar",
+							  }
+							})
+							.then(function(value){
+							  switch (value) {
+							    case "choose":
+									  AtmService.withdrawOptions(withdrawValue).then(function(response){
+												self.withdrawOptions = response.data
+												swal("Escolha uma opção de cédulas para seu saque.");
+										})
+							      break;
+
+							    case "bestOption":
+										AtmService.bestOption(withdrawValue).then(function(response){
+												self.withdrawOptions = [response.data]
+												swal("Achamos a melhor opção para seu saque.");
+										})
+							      break;
+
+							    default:
+							      swal("Ok");
+							  }
+							});
+					})
+				}
+
+				function format(option){
+						return _(option)
+									.filter(function(f){return f.amount != 0})
+									.map(function(m){ return m.amount+'x'+m.note })
+									.value().join(', ');
+				}
+
+				function withdraw(option){
+					swal({
+						title: "Realização de Saque",
+						text: "A sacar: "+self.format(option),})
+						.then(function(willWithdraw){
+							if (willWithdraw) {
+									AtmService.withdraw(option).then(function(response){
+										self.notes = response.data
+										self.withdrawOptions = []
+										swal("Saque Realizado", "Notas debidatas com sucesso.", "success");
+									})
+							}
+						});
 				}
 
 	});

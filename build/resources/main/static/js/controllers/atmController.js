@@ -35,13 +35,16 @@ angular.module('todomvc')
 					}else{
 							console.log(sameNote,'ja tem, senhor');
 					}
-					self.supplyNote = {}
+					self.supplyNote = {};
 				}
 
 				function supply(){
 						AtmService.supply(self.supplyNotes).then(function(response){
 							self.notes = response.data
-						}) ;
+							self.supplyNotes = [];
+							self.supplyNote = {};
+						});
+						$('#exampleModal').modal('hide');
 				}
 
 	});

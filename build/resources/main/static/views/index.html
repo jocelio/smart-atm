@@ -238,7 +238,8 @@
 					  </div>
 					  <button type="submit" class="btn btn-default" ng-disabled="myForm.$invalid || myForm.$pristine">Adicionar</button>
 					</form>
-					<table class="table table-bordered">
+					<hr>
+					<table class="table table-bordered" ng-if="atm.supplyNotes.length > 0">
 							<thead>
 								<tr>
 									<th>Cédula</th>
@@ -256,7 +257,7 @@
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-	        <button type="button" class="btn btn-primary" ng-click="atm.supply()">Enviar</button>
+	        <button type="button" class="btn btn-primary" ng-click="atm.supply()" ng-disable="atm.supplyNotes.length == 0">Enviar</button>
 	      </div>
 	    </div>
 	  </div>
