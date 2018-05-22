@@ -66,17 +66,17 @@ gulp.task('build-css', ['clean'], function() {
 /////////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('build-template-cache', ['clean'], function() {
-    
+
     var ngHtml2Js = require("gulp-ng-html2js"),
         concat = require("gulp-concat");
-    
-    return gulp.src("./partials/*.html")
-        .pipe(ngHtml2Js({
-            moduleName: "todoPartials",
-            prefix: "/partials/"
-        }))
-        .pipe(concat("templateCachePartials.js"))
-        .pipe(gulp.dest("./dist"));
+
+    // return gulp.src("./src/main/resources/static/partials/*.html")
+    //     .pipe(ngHtml2Js({
+    //         moduleName: "todoPartials",
+    //         prefix: "/partials/"
+    //     }))
+    //     .pipe(concat("templateCachePartials.js"))
+    //     .pipe(gulp.dest("./src/main/resources/static/dist"));
 });
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -86,7 +86,7 @@ gulp.task('build-template-cache', ['clean'], function() {
 /////////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('jshint', function() {
-    gulp.src('/js/*.js')
+    gulp.src('./src/main/resources/static/js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -123,14 +123,14 @@ gulp.task('build-js', ['clean'], function() {
     var b = browserify({
         entries: './src/main/resources/static/js/app.js',
         debug: true,
-        paths: ['./src/main/resources/static/js/controllers', './src/main/resources/static/js/services', './src/main/resources/static/js/directives'],
+        paths: ['./src/main/resources/static/js/controllers', './src/main/resources/static/js/services'],
         transform: [ngAnnotate]
     });
 
     return b.bundle()
         .pipe(source('bundle.js'))
         .pipe(buffer())
-        .pipe(cachebust.resources())
+        // .pipe(cachebust.resources())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
         .on('error', gutil.log)
@@ -145,9 +145,9 @@ gulp.task('build-js', ['clean'], function() {
 /////////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('build', [ 'clean', 'bower','build-css','build-template-cache', 'jshint', 'build-js'], function() {
-    return gulp.src('index.html')
+    return gulp.src('./src/main/resources/static/views/index.html')
         .pipe(cachebust.references())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./src/main/resources/static/dist/'));
 });
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -157,7 +157,7 @@ gulp.task('build', [ 'clean', 'bower','build-css','build-template-cache', 'jshin
 /////////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('watch', function() {
-    return gulp.watch(['./index.html','./partials/*.html', './styles/*.*css', './src/main/resources/static/js/**/*.js'], ['build']);
+    return gulp.watch(['./src/main/resources/static/views/index.html','./src/main/resources/static/partials/*.html', './src/main/resources/static/styles/*.*css', './src/main/resources/static/js/**/*.js'], ['build']);
 });
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -171,7 +171,7 @@ gulp.task('webserver', ['watch','build'], function() {
         .pipe(webserver({
             livereload: false,
             directoryListing: true,
-            open: "http://localhost:8000/views/index.html"
+            // open: "http://localhost:8000/views/index.html"
         }));
 });
 

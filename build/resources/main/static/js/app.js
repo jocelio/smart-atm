@@ -1,40 +1,32 @@
 /*global angular */
 
 /**
- * The main TodoMVC app module
  *
  * @type {angular.Module}
  */
 
-angular = require('angular');
+require('angular');
 require('angular-route');
-require('../dist/templateCachePartials');
 
-angular.module('todomvc', ['ngRoute','todoPartials'])
+angular.module('todomvc', ['ngRoute'])
 	.config(function ($routeProvider) {
 		'use strict';
 
-		var routeConfig = {
-			controller: 'TodoCtrl',
-			templateUrl: '/partials/todomvc-index.html',
-			resolve: {
-				store: ['todoStorage', function (todoStorage) {
-					// Get the correct module (API or localStorage).
-					return todoStorage;
-				}]
-			}
-		};
-
 		$routeProvider
-			.when('/', routeConfig)
-			.when('/:status', routeConfig)
+			.when('/', {
+					templateUrl: '/partials/atm-index.html',
+					// controller: 'atmController'
+			})
 			.otherwise({
-				redirectTo: '/'
+				redirectTo: '/login'
 			});
 	});
 
-require('todoCtrl');
-require('todoStorage');
-require('todoFocus');
-require('todoEscape');
-require('footer');
+// require('todoStorage');
+// require('todoCtrl');
+require('atmController');
+require('atmService');
+
+// require('todoFocus');
+// require('todoEscape');
+// require('footer');

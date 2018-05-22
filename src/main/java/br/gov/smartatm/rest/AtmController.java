@@ -15,6 +15,7 @@ import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequestMapping("/api/atm")
+@CrossOrigin(origins = "http://localhost:8000")
 public class AtmController {
 
     @Autowired
@@ -22,7 +23,7 @@ public class AtmController {
 
     @Autowired
     private BankNotesService bankNotesService;
-    
+
     @PostMapping("/supply")
     public List<BankNotes> supply(@RequestBody final List<BankNotes> bankNotes){
 
@@ -34,8 +35,8 @@ public class AtmController {
         ).collect(toList());
 
         List<BankNotes> save = bankNotesRepository.save(suppliedNotes);
-        System.out.println("save"+save);
-        return save;
+
+        return bankNotesRepository.findAll();
     }
 
     @GetMapping("/options/{value}")
