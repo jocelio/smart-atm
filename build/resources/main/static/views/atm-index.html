@@ -1,0 +1,23 @@
+<div>
+    <section >
+      
+      <div class="row">
+        <div class="col-md-12 centered" >
+          <button nf-if="atm.notes.length > 0"
+                  type="button"
+          style="width: 182px;"
+          class="btn btn-primary btn-lg" ng-click="atm.openWithdrawModal()">Sacar</button>
+        </div>
+      </div>
+      <hr/>
+      <div class="row" style="padding-left: 12px;">
+        <div class="col-lg-6 col-md-6" ng-repeat="option in atm.withdrawOptions" style="padding:2px;">
+          <button type="button" class="btn btn-default btn-lg" style="width: 182px;"
+          ng-click="atm.withdraw(option)">
+            {{atm.format(option)}}
+          </button>
+        </div>
+      </div>
+
+    </section>
+</div>
