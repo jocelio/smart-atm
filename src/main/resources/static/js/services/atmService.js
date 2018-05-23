@@ -13,9 +13,7 @@ angular.module('todomvc').factory('AtmService',
                 , bestOption: bestOption
             };
 
-            var host = 'http://localhost:8080';
-
-            return factory;
+            var host = window.location.origin
 
             function loadAllNotes() {
                 var deferred = $q.defer();
@@ -86,6 +84,8 @@ angular.module('todomvc').factory('AtmService',
                     );
                 return deferred.promise;
             }
+
+            return factory;
 
         }
     ]);
