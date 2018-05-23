@@ -42,8 +42,9 @@ angular.module('todomvc')
 					if(_.isEmpty(sameNote)){
 					   self.supplyNotes = self.supplyNotes.concat(_.clone(self.supplyNote))
 					}else{
-							console.log(sameNote,'ja tem, senhor');
+							swal("Cédula já adicionada.")
 					}
+
 					self.supplyNote = {};
 
 				}
@@ -66,10 +67,14 @@ angular.module('todomvc')
 
 				function openWithdrawModal(){
 
-					swal("Valor:", {
-					  content: "input",
-					})
+					swal("Valor:", {content: "input"})
 					.then(function(withdrawValue){
+
+						if(isNaN(withdrawValue)){
+								swal("Selecione um número inteiro ;)")
+								return;
+						}
+
 						swal("Como deseja suas cédulas?", {
 							  buttons: {
 							    choose: {
@@ -88,19 +93,16 @@ angular.module('todomvc')
 							    case "choose":
 									  AtmService.withdrawOptions(withdrawValue).then(function(response){
 												self.withdrawOptions = response.data
-												swal("Escolha uma opção de cédulas para seu saque.");
 										})
 							      break;
 
 							    case "bestOption":
 										AtmService.bestOption(withdrawValue).then(function(response){
 												self.withdrawOptions = [response.data]
-												swal("Achamos a melhor opção para seu saque.");
 										})
 							      break;
-
 							    default:
-							      swal("Ok");
+
 							  }
 							});
 					})

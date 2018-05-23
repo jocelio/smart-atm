@@ -12,9 +12,10 @@ angular.module('todomvc').factory('AtmService',
                 , withdrawOptions: withdrawOptions
                 , withdraw: withdraw
                 , bestOption: bestOption
+                , reset: reset
             };
 
-            var host = _.includes(window.location.origin, 'localhost')? 'http://localhost:8080/':window.location.origin; 
+            var host = _.includes(window.location.origin, 'localhost')? 'http://localhost:8080/':window.location.origin;
 
             function loadAllNotes() {
                 var deferred = $q.defer();
@@ -75,6 +76,20 @@ angular.module('todomvc').factory('AtmService',
             function withdraw(withdrawOption) {
                 var deferred = $q.defer();
                 $http.post(host+'/api/atm/withdraw/', withdrawOption)
+                    .then(
+                        function (response) {
+                            deferred.resolve(response);
+                        },
+                        function (errResponse) {
+                            deferred.reject(errResponse);
+                        }
+                    );
+                return deferred.promise;
+            }
+
+            function reset() {
+                var deferred = $q.defer();
+                $http.delete(host+'/api/atm/')
                     .then(
                         function (response) {
                             deferred.resolve(response);

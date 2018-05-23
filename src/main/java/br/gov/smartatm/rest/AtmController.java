@@ -95,7 +95,7 @@ public class AtmController {
     }
 
     private List<List<BankNotes>> getWithdrawOptions(Integer value){
-        final List<BankNotes> notes = bankNotesRepository.findAll();
+        final List<BankNotes> notes = bankNotesRepository.findAll().stream().filter(f -> f.getAmount() >= 0).collect(toList());
         return bankNotesService.calcCombinations(toArray(notes, BankNotes::getNote), toArray(notes, BankNotes::getAmount), value);
     }
 
