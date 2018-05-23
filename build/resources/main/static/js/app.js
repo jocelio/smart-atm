@@ -14,19 +14,12 @@ angular.module('todomvc', ['ngRoute'])
 
 		$routeProvider
 			.when('/', {
-					templateUrl: '/partials/atm-index.html',
-					// controller: 'atmController'
+					templateUrl: '/views/atm-index.html',
 			})
 			.otherwise({
 				redirectTo: '/login'
 			});
 	});
 
-// require('todoStorage');
-// require('todoCtrl');
-require('atmController');
-require('atmService');
-
-// require('todoFocus');
-// require('todoEscape');
-// require('footer');
+	require('atmController');
+	require('atmService');

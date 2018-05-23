@@ -1,5 +1,6 @@
 
 'use strict';
+var _ = require('lodash');
 
 angular.module('todomvc').factory('AtmService',
     ['$http', '$q',
@@ -13,7 +14,7 @@ angular.module('todomvc').factory('AtmService',
                 , bestOption: bestOption
             };
 
-            var host = window.location.origin
+            var host = _.includes(window.location.origin, 'localhost')? 'http://localhost:8080/':window.location.origin; 
 
             function loadAllNotes() {
                 var deferred = $q.defer();

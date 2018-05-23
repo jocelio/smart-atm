@@ -6,23 +6,51 @@ angular.module('todomvc').factory('AtmService',
         function ($http, $q) {
 
             var factory = {
-                loadAllNotes: loadAllNotes,
-                supply: supply
+                  loadAllNotes: loadAllNotes
+                , supply: supply
+                , withdrawOptions: withdrawOptions
+                , withdraw: withdraw
+                , bestOption: bestOption
             };
 
-            return factory;
+            var host = window.location.origin
 
             function loadAllNotes() {
-                console.log('Fetching all notes');
                 var deferred = $q.defer();
-                $http.get('http://localhost:8080/api/atm/')
+                $http.get(host+'/api/atm/')
                     .then(
                         function (response) {
-                            console.log('Fetched successfully all users');
                             deferred.resolve(response);
                         },
                         function (errResponse) {
-                            console.error('Error while loading users');
+                            deferred.reject(errResponse);
+                        }
+                    );
+                return deferred.promise;
+            }
+
+            function withdrawOptions(value) {
+                var deferred = $q.defer();
+                $http.get(host+'/api/atm/options/'+value)
+                    .then(
+                        function (response) {
+                            deferred.resolve(response);
+                        },
+                        function (errResponse) {
+                            deferred.reject(errResponse);
+                        }
+                    );
+                return deferred.promise;
+            }
+
+            function bestOption(value) {
+                var deferred = $q.defer();
+                $http.get(host+'/api/atm/best-option/'+value)
+                    .then(
+                        function (response) {
+                            deferred.resolve(response);
+                        },
+                        function (errResponse) {
                             deferred.reject(errResponse);
                         }
                     );
@@ -30,21 +58,34 @@ angular.module('todomvc').factory('AtmService',
             }
 
             function supply(bankNotes) {
-                console.log('Fetching all notes');
                 var deferred = $q.defer();
-                $http.post('http://localhost:8080/api/atm/supply', bankNotes)
+                $http.post(host+'/api/atm/supply', bankNotes)
                     .then(
                         function (response) {
-                            console.log('Fetched successfully all users');
                             deferred.resolve(response);
                         },
                         function (errResponse) {
-                            console.error('Error while loading users');
                             deferred.reject(errResponse);
                         }
                     );
                 return deferred.promise;
             }
+
+            function withdraw(withdrawOption) {
+                var deferred = $q.defer();
+                $http.post(host+'/api/atm/withdraw/', withdrawOption)
+                    .then(
+                        function (response) {
+                            deferred.resolve(response);
+                        },
+                        function (errResponse) {
+                            deferred.reject(errResponse);
+                        }
+                    );
+                return deferred.promise;
+            }
+
+            return factory;
 
         }
     ]);
