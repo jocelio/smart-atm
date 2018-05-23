@@ -14,7 +14,7 @@ angular.module('todomvc', ['ngRoute'])
 
 		$routeProvider
 			.when('/', {
-					templateUrl: '/partials/atm-index.html',
+					templateUrl: '/views/atm-index.html',
 			})
 			.otherwise({
 				redirectTo: '/login'
