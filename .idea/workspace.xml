@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b043f72-d453-44c2-a662-a40340d6f3aa" name="Default" comment="Injecting service and repository throught autowired">
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/smartatm/rest/AtmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/controllers/atmController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controllers/atmController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/services/atmService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/services/atmService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/atm-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/atm-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/views/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="5b043f72-d453-44c2-a662-a40340d6f3aa" name="Default" comment="Injecting service and repository throught autowired" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
