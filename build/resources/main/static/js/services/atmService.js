@@ -1,10 +1,30 @@
 
 'use strict';
 var _ = require('lodash');
+require('angular-resource');
 
-angular.module('todomvc').factory('AtmService',
-    ['$http', '$q',
-        function ($http, $q) {
+angular.module('todomvc')
+.run(['$http','$cookies', function($http, $cookies) {
+  console.log(':)')
+  var isLoginPage = window.location.href.indexOf("login") != -1;
+
+  if(isLoginPage){
+      if($cookies.get("access_token")){
+          window.location.href = "index.html";
+      }
+  } else{
+      if($cookies.get("access_token")){
+        console.log('token', $cookies.get("access_token"))
+          $http.defaults.headers.common.Authorization =
+            'Bearer ' + $cookies.get("access_token");
+      } else{
+          window.location.href = "login.html";
+      }
+  }
+
+}])
+.factory('AtmService',
+    ['$http', '$q', '$cookies', function ($http, $q, $cookies) {
 
             var factory = {
                   loadAllNotes: loadAllNotes
@@ -13,12 +33,14 @@ angular.module('todomvc').factory('AtmService',
                 , withdraw: withdraw
                 , bestOption: bestOption
                 , reset: reset
+                , login: login
             };
 
-            var host = _.includes(window.location.origin, 'localhost')? 'http://localhost:8080/':window.location.origin;
+            var host = _.includes(window.location.origin, 'localhost')? 'http://localhost:8080':window.location.origin;
 
             function loadAllNotes() {
                 var deferred = $q.defer();
+                console.log('http',$http)
                 $http.get(host+'/api/atm/')
                     .then(
                         function (response) {
@@ -90,6 +112,31 @@ angular.module('todomvc').factory('AtmService',
             function reset() {
                 var deferred = $q.defer();
                 $http.delete(host+'/api/atm/')
+                    .then(
+                        function (response) {
+                            deferred.resolve(response);
+                        },
+                        function (errResponse) {
+                            deferred.reject(errResponse);
+                        }
+                    );
+                return deferred.promise;
+            }
+
+            function login(user, encoded){
+            var deferred = $q.defer();
+
+                var req = {
+                            method: 'POST',
+                            url: host+"/oauth/token?"+user,
+                            headers: {
+                                "Authorization": "Basic " + encoded,
+                                "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
+                            },
+                            data: user
+                        }
+
+                $http(req)
                     .then(
                         function (response) {
                             deferred.resolve(response);

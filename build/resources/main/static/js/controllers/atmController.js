@@ -8,9 +8,11 @@
 angular = require('angular');
 var _ = require('lodash');
 var swal = require('sweetalert');
+require('angular-resource');
+require('angular-cookies');
 
-angular.module('todomvc')
-	.controller('AtmController', function AtmController($scope, $routeParams, $filter, AtmService) {
+angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
+	.controller('AtmController', function AtmController($scope, $routeParams, $resource, $http, $httpParamSerializer, $cookies, AtmService) {
 		'use strict';
         $scope._ = _;
         var self = this;
@@ -28,9 +30,9 @@ angular.module('todomvc')
 				self.format = format;
 				self.withdraw = withdraw;
 				self.reset = reset;
+				$scope.getAllNotes = getAllNotes;
 
-
-				getAllNotes();
+				// getAllNotes();
 
         function getAllNotes(){
               AtmService.loadAllNotes().then(function(response){
@@ -190,5 +192,27 @@ angular.module('todomvc')
 						})
 
 				}
+
+				self.user = {
+                grant_type:"password",
+                username: "",
+                password: "",
+        };
+
+        self.encoded = btoa("clientapp:123456");
+
+        self.login = function() {
+            AtmService.login($httpParamSerializer(self.user), self.encoded).then(function(data){
+                $http.defaults.headers.common.Authorization = 'Bearer ' + data.data.access_token;
+                $cookies.put("access_token", data.data.access_token);
+                window.location.href="index.html";
+            }, function(reason) {
+							swal({
+								title: "Falha ao realizar Login",
+								text: "Usuário ou senha incorretos",
+								icon: "warning"
+								})
+							});
+         }
 
 	});
