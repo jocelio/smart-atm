@@ -9,6 +9,7 @@
         </div>
       </div>
       <hr/>
+      <h3 ng-if="atm.withdrawValue > 0"> Opções de saque para: R$ {{atm.withdrawValue}}</h3>
       <div class="row" style="padding-left: 12px;">
         <div class="col-lg-6 col-md-6" ng-repeat="option in atm.withdrawOptions" style="padding:2px;">
           <button type="button" class="btn btn-default btn-lg" style="width: 182px;"

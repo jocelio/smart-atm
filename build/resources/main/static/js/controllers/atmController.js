@@ -15,6 +15,7 @@ angular.module('todomvc')
         $scope._ = _;
         var self = this;
 
+				self.withdrawValue;
 				self.notes = [];
 				self.supplyNote = {};
 				self.supplyNotes = [];
@@ -26,6 +27,8 @@ angular.module('todomvc')
 				self.openWithdrawModal = openWithdrawModal;
 				self.format = format;
 				self.withdraw = withdraw;
+				self.reset = reset;
+
 
 				getAllNotes();
 
@@ -36,9 +39,16 @@ angular.module('todomvc')
         }
 
 				function addNote(){
+
+					if(self.supplyNote.note < 0 || self.supplyNote.amount < 0){
+						  swal("Não é possível cadastrar cédula ou quantidade negativa.")
+							return;
+					}
+
 					var sameNote = _.filter(self.supplyNotes, function(sn){
 						 return sn.note == self.supplyNote.note;
 					});
+
 					if(_.isEmpty(sameNote)){
 					   self.supplyNotes = self.supplyNotes.concat(_.clone(self.supplyNote))
 					}else{
@@ -71,9 +81,20 @@ angular.module('todomvc')
 					.then(function(withdrawValue){
 
 						if(isNaN(withdrawValue)){
-								swal("Selecione um número inteiro ;)")
+								swal("Selecione um número inteiro ;)");
 								return;
 						}
+
+						var littleNote = _(self.notes).filter(function(n){return n.amount>0}).sortBy(function(n){return n.note}).head();
+
+						if(withdrawValue % littleNote.note !== 0){
+								self.withdrawOptions = []
+								self.withdrawValue = 0;
+								swal("Não é possível sacar esse valor com as notas disponíveis.");
+								return;
+						}
+
+						self.withdrawValue = withdrawValue;
 
 						swal("Como deseja suas cédulas?", {
 							  buttons: {
@@ -118,16 +139,56 @@ angular.module('todomvc')
 				function withdraw(option){
 					swal({
 						title: "Realização de Saque",
-						text: "A sacar: "+self.format(option),})
-						.then(function(willWithdraw){
-							if (willWithdraw) {
-									AtmService.withdraw(option).then(function(response){
-										self.notes = response.data
-										self.withdrawOptions = []
-										swal("Saque Realizado", "Notas debidatas com sucesso.", "success");
-									})
+						text: "Sacar: "+self.format(option)+"?",
+						buttons: {
+							yes: {
+								text: "Sim",
+								value: "yes",
+							},
+							cancel: "Cancelar"
+						}})
+						.then(function(value){
+								switch (value) {
+									case "yes":
+											AtmService.withdraw(option).then(function(response){
+												self.notes = response.data
+												self.withdrawOptions = []
+												self.withdrawValue = 0;
+												swal("Saque Realizado", "Notas debidatas com sucesso.", "success");
+											})
+										break;
+
+									default:
+
 							}
 						});
+				}
+
+				function reset(){
+					swal({
+						title: "Lipar todos os dados?",
+						text: "Apagar todas as notas?",
+						buttons: {
+							yes: {
+								text: "Sim",
+								value: "yes",
+							},
+							cancel: "Cancelar"
+						}})
+						.then(function(value){
+								switch (value) {
+									case "yes":
+											AtmService.reset().then(function(response){
+												self.notes = []
+												self.withdrawOptions = []
+												self.withdrawValue = 0;
+												swal("", "", "success");
+											})
+										break;
+									default:
+							}
+						})
+
 				}
 
 	});
