@@ -12,5 +12,10 @@ public class AppController {
     String home(ModelMap modal) {
         return "index";
     }
-    
+
+    @RequestMapping("/{page}")
+    String pageHandler(@PathVariable("page") final String page) {
+        return page;
+    }
+
 }

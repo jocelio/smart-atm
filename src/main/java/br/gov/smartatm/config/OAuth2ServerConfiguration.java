@@ -53,12 +53,9 @@ public class OAuth2ServerConfiguration {
 
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
-
-			http
+			http.csrf().disable()
 				.authorizeRequests()
-					.antMatchers("/users").hasRole("ADMIN")
-					.antMatchers("/greeting").authenticated()
-					.antMatchers("/api/**").authenticated();
+					.antMatchers("/api/**").hasRole("ADMIN");
 		}
 
 	}
