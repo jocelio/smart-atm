@@ -6,18 +6,18 @@ require('angular-resource');
 angular.module('todomvc')
 .run(['$http','$cookies', function($http, $cookies) {
   var isLoginPage = window.location.href.indexOf("login") != -1;
-  if(isLoginPage){
-      if($cookies.get("access_token")){
-          window.location.href = "index.html";
-      }
-  } else{
-      if($cookies.get("access_token")){
-          $http.defaults.headers.common.Authorization =
-            'Bearer ' + $cookies.get("access_token");
-      } else{
-          window.location.href = "login.html";
-      }
-  }
+//  if(isLoginPage){
+//      if($cookies.get("access_token")){
+//          window.location.href = "index.html";
+//      }
+//  } else{
+//      if($cookies.get("access_token")){
+//          $http.defaults.headers.common.Authorization =
+//            'Bearer ' + $cookies.get("access_token");
+//      } else{
+//          window.location.href = "login.html";
+//      }
+//  }
 }])
 .factory('AtmService',
     ['$http', '$q', '$cookies', function ($http, $q, $cookies) {

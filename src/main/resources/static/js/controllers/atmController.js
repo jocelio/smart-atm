@@ -198,7 +198,6 @@ angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
 
                 function login() {
                     AtmService.login($httpParamSerializer(self.user), btoa("clientapp:123456")).then(function(data){
-                        // $http.defaults.headers.common.Authorization = 'Bearer ' + data.data.access_token;
                         $cookies.put("access_token", data.data.access_token);
                         window.location.href="index.html";
                     }, function(reason) {
