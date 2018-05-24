@@ -22,6 +22,7 @@ angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
 				self.supplyNote = {};
 				self.supplyNotes = [];
 				self.withdrawOptions = [];
+				self.user = {grant_type:"password", username: "", password: ""};
 
 				self.addNote = addNote;
 				self.supply = supply;
@@ -30,15 +31,17 @@ angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
 				self.format = format;
 				self.withdraw = withdraw;
 				self.reset = reset;
+				self.login = login;
+				self.logout = logout;
+
 				$scope.getAllNotes = getAllNotes;
 
-				// getAllNotes();
 
-        function getAllNotes(){
-              AtmService.loadAllNotes().then(function(response){
-								self.notes = response.data
-							}) ;
-        }
+                function getAllNotes(){
+                      AtmService.loadAllNotes().then(function(response){
+                          self.notes = response.data
+                      });
+                }
 
 				function addNote(){
 
@@ -193,26 +196,22 @@ angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
 
 				}
 
-				self.user = {
-                grant_type:"password",
-                username: "",
-                password: "",
-        };
+                function login() {
+                    AtmService.login($httpParamSerializer(self.user), btoa("clientapp:123456")).then(function(data){
+                        // $http.defaults.headers.common.Authorization = 'Bearer ' + data.data.access_token;
+                        $cookies.put("access_token", data.data.access_token);
+                        window.location.href="index.html";
+                    }, function(reason) {
+                        swal({
+                            title: "Falha ao realizar Login",
+                            text: "Usuário ou senha incorretos",
+                            icon: "warning"
+                            })
+                        });
+                }
 
-        self.encoded = btoa("clientapp:123456");
-
-        self.login = function() {
-            AtmService.login($httpParamSerializer(self.user), self.encoded).then(function(data){
-                $http.defaults.headers.common.Authorization = 'Bearer ' + data.data.access_token;
-                $cookies.put("access_token", data.data.access_token);
-                window.location.href="index.html";
-            }, function(reason) {
-							swal({
-								title: "Falha ao realizar Login",
-								text: "Usuário ou senha incorretos",
-								icon: "warning"
-								})
-							});
-         }
+                function logout() {
+                    AtmService.logout();
+                }
 
 	});

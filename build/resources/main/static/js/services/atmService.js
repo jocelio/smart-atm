@@ -5,23 +5,19 @@ require('angular-resource');
 
 angular.module('todomvc')
 .run(['$http','$cookies', function($http, $cookies) {
-  console.log(':)')
   var isLoginPage = window.location.href.indexOf("login") != -1;
-
   if(isLoginPage){
       if($cookies.get("access_token")){
           window.location.href = "index.html";
       }
   } else{
       if($cookies.get("access_token")){
-        console.log('token', $cookies.get("access_token"))
           $http.defaults.headers.common.Authorization =
             'Bearer ' + $cookies.get("access_token");
       } else{
           window.location.href = "login.html";
       }
   }
-
 }])
 .factory('AtmService',
     ['$http', '$q', '$cookies', function ($http, $q, $cookies) {
@@ -34,13 +30,14 @@ angular.module('todomvc')
                 , bestOption: bestOption
                 , reset: reset
                 , login: login
+                , logout: logout
             };
 
             var host = _.includes(window.location.origin, 'localhost')? 'http://localhost:8080':window.location.origin;
 
             function loadAllNotes() {
                 var deferred = $q.defer();
-                console.log('http',$http)
+
                 $http.get(host+'/api/atm/')
                     .then(
                         function (response) {
@@ -135,7 +132,6 @@ angular.module('todomvc')
                             },
                             data: user
                         }
-
                 $http(req)
                     .then(
                         function (response) {
@@ -146,6 +142,11 @@ angular.module('todomvc')
                         }
                     );
                 return deferred.promise;
+            }
+
+            function logout(){
+               $cookies.put('access_token');
+                window.location.href = "login.html";
             }
 
             return factory;

@@ -12,7 +12,6 @@ angular.module('todomvc')
       }
   } else{
       if($cookies.get("access_token")){
-        console.log('token', $cookies.get("access_token"))
           $http.defaults.headers.common.Authorization =
             'Bearer ' + $cookies.get("access_token");
       } else{
