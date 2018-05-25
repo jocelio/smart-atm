@@ -23,8 +23,6 @@ public class BankNotesService {
     public List<List<BankNotes>> calcCombinations(final int[] bankNotes, final int[] ammounts, final int value) {
         List<List<BankNotes>> result = resolution(bankNotes, ammounts, new int[ammounts.length], value, 0);
         return result.stream()
-//                    .map( l -> l.stream()
-//                                .collect(toList()))
                     .filter(l -> l.stream().filter(f -> f.getAmount() != 0).count() <= MAX_NOTES )
                     .collect(toList());
     }
