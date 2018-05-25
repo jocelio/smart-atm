@@ -56,8 +56,8 @@ public class OAuth2ServerConfiguration {
 			http.csrf().disable()
 				.authorizeRequests()
 					.antMatchers("/api/**")
-//					.hasRole("ADMIN");
-			.permitAll();
+					.hasRole("ADMIN");
+//			.permitAll();
 		}
 
 	}

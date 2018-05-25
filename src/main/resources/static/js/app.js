@@ -8,7 +8,7 @@
 require('angular');
 require('angular-route');
 
-angular.module('todomvc', ['ngRoute'])
+angular.module('smartatm', ['ngRoute'])
 	.config(function ($routeProvider) {
 		'use strict';
 

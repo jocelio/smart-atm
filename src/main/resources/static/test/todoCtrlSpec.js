@@ -6,7 +6,7 @@
 		var ctrl, scope, store;
 
 		// Load the module containing the app, only 'ng' is loaded by default.
-		beforeEach(module('todomvc'));
+		beforeEach(module('smartatm'));
 
 		beforeEach(inject(function ($controller, $rootScope, localStorage) {
 			scope = $rootScope.$new();

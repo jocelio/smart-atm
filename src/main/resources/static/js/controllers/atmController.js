@@ -12,7 +12,7 @@ require('angular-resource');
 require('angular-cookies');
 var moment = require('moment')
 
-angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
+angular.module('smartatm', ["ngResource","ngRoute","ngCookies"])
 	.controller('AtmController', function AtmController($scope, $routeParams, $resource, $http, $httpParamSerializer, $cookies, AtmService) {
 		'use strict';
         $scope._ = _;

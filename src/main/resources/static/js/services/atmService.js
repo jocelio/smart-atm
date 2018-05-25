@@ -3,7 +3,7 @@
 var _ = require('lodash');
 require('angular-resource');
 
-angular.module('todomvc')
+angular.module('smartatm')
 .run(['$http','$cookies', function($http, $cookies) {
   var isLoginPage = window.location.href.indexOf("login") != -1;
   if(isLoginPage){
