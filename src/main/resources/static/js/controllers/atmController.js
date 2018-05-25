@@ -10,6 +10,7 @@ var _ = require('lodash');
 var swal = require('sweetalert');
 require('angular-resource');
 require('angular-cookies');
+var moment = require('moment')
 
 angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
 	.controller('AtmController', function AtmController($scope, $routeParams, $resource, $http, $httpParamSerializer, $cookies, AtmService) {
@@ -85,9 +86,9 @@ angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
 					swal("Valor:", {content: "input"})
 					.then(function(withdrawValue){
 
-						if(isNaN(withdrawValue)){
-								swal("Selecione um número inteiro ;)");
-								return;
+						if(isNaN(withdrawValue) || withdrawValue <= 0){
+                                swal("Selecione um número inteiro maior que zero ;)");
+                                return;
 						}
 
 						var littleNote = _(self.notes).filter(function(n){return n.amount>0}).sortBy(function(n){return n.note}).head();
@@ -198,7 +199,10 @@ angular.module('todomvc', ["ngResource","ngRoute","ngCookies"])
 
                 function login() {
                     AtmService.login($httpParamSerializer(self.user), btoa("clientapp:123456")).then(function(data){
-                        $cookies.put("access_token", data.data.access_token);
+
+                        var expiresIn = moment(new Date().getTime() + data.data.expires_in);
+
+                        $cookies.put("access_token", data.data.access_token, { expires: expiresIn.toDate() });
                         window.location.href="index.html";
                     }, function(reason) {
                         swal({
