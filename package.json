@@ -5,6 +5,7 @@
     "angular-cookies": "^1.7.0",
     "angular-resource": "^1.7.0",
     "lodash": "^4.17.10",
+    "moment": "^2.22.1",
     "sweetalert": "^2.1.0",
     "todomvc-app-css": "^1.0.1",
     "todomvc-common": "^1.0.0"
