@@ -34,11 +34,19 @@ test:
 
 production:
   stage: deploy
-  script:
-  - apt-get update -qy
-  - apt-get install -y ruby-dev
-  - gem install dpl
-  - dpl --provider=heroku --app=smart-atm --api-key=$HEROKU_PRODUCTION_API_KEY
+ image: ruby:2.3
+ script:
+ - apt-get update -qy
+ - apt-get install -y ruby-dev
+ - gem install dpl
+ - dpl --provider=heroku --app=smart-atm --api-key=$HEROKU_PRODUCTION_API_KEY
+ environment:
+ name: staging
+ url: https://smart-atm.herokuapp.com/
+ only:
+ - master
+ tags:
+ - docker
 
 after_script:
   - echo "End CI"
