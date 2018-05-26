@@ -1,3 +1,7 @@
+stages:
+- deploy
+
+
 production:
   type: deploy
   script:
