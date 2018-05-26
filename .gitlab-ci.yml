@@ -1,24 +1,42 @@
+image: java:8-jdk
+
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+#  - echo `pwd` # debug
+#  - echo "$CI_BUILD_NAME, $CI_BUILD_REF_NAME $CI_BUILD_STAGE" # debug
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+build:
+  stage: build
+  script:
+    - ./gradlew assemble
+  artifacts:
+    paths:
+      - build/libs/*.jar
+    expire_in: 1 week
+  only:
+    - master
+
 test:
   stage: test
   script:
-  - apt-get update -qy
-  - apt-get install -y nodejs
-  - bundle install --path /cache
-  - bundle exec rake db:create RAILS_ENV=test
-  - bundle exec rake test
+    - ./gradlew check
 
-staging:
-  stage: deploy
-  script:
-  - gem install dpl
-  - dpl --provider=heroku --app=gitlab-ci-ruby-test-staging --api-key=$HEROKU_STAGING_API_KEY
-  only:
-  - master
 
 production:
   stage: deploy
   script:
   - gem install dpl
-  - dpl --provider=heroku --app=gitlab-ci-ruby-test-prod --api-key=$HEROKU_PRODUCTION_API_KEY
-  only:
-  - tags
+  - dpl --provider=heroku --app=smart-atm --api-key=$HEROKU_PRODUCTION_API_KEY
+
+after_script:
+  - echo "End CI"
